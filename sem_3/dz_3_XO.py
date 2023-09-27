@@ -2,6 +2,7 @@ from tkinter import *
 
 
 class XO:
+    """Класс логики  игры """
     def __init__(self, size):
         self._size = size
         self._matrix = []
@@ -68,6 +69,7 @@ class XO:
 
 
     def check_end_game(self):
+        """Проверка на конец ходов"""
         count = 0
         for n, i in enumerate(self._matrix):
             for k in self._matrix[n]:
@@ -85,6 +87,7 @@ class XO:
             self.step(x, y)
 
     def check_winner(self) -> bool:
+        """Проверка победителя завершение  игры до окончания ходов"""
         for i in range(3):
             if self._matrix[i][0] == self._matrix[i][1] == self._matrix[i][2] == self._markX or \
                     self._matrix[i][0] == self._matrix[i][1] == self._matrix[i][2] == self._markO:
@@ -101,6 +104,7 @@ class XO:
 ###########
 
 class Window(Frame):
+    """Класс  окна"""
 
     def __init__(self):
         super().__init__()
@@ -133,7 +137,7 @@ class Window(Frame):
         self.quit()
 
     def pr(self, butt):
-        """Щелкаем по кнопке"""
+        """Щелкаем По кнопке крестика или нолика"""
         if self.ng.end_game:
             self.lb.configure(text="End Game")
 
