@@ -159,7 +159,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-# new_game = XO(3)
-# new_game.show_xo()
-# new_game.start_game()
