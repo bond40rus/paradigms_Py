@@ -19,6 +19,7 @@ def pearson_correlation(array_1, array_2):
     variance_y = sum([(yi - avg_y) ** 2 for yi in array_2]) / float(len(array_2))
     # функция zip  создает картежи  паралейно с двумя массиввами
     covariance = sum([(xi - avg_x) * (yi - avg_y) for xi, yi in zip(array_1, array_2)]) / float(len(array_1))
+
     correlation = covariance / (math.sqrt(variance_x * variance_y))
 
     return correlation
